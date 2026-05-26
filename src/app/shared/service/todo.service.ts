@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Itodo } from '../models/todo';
+import { Ires, Itodo, ITodoRes } from '../models/todo';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -27,5 +27,13 @@ export class TodoService {
 
   fetchTodo():Observable<Itodo[]>{
       return of(this.todoArr);
+  }
+
+  AddTodo(todo:Itodo):Observable<ITodoRes>{
+    this.todoArr.push(todo);
+    return of({
+      msg:'todo Item is Added Succesfully !!!',
+      data:todo
+    })
   }
 }
