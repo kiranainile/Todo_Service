@@ -25,5 +25,9 @@ private _snackabr:Snackbarservice){
     })
   }
 
+  onTodoEdit(todo : Itodo){
+    console.log(todo);
+    this._todoService.editTodoSub$.next(todo)
+  }
  
 }

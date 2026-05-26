@@ -4,7 +4,8 @@
             <strong>{{todo.todoItem}}</strong>
 
             <div>
-                <button mat-mini-fab color="primary" class="mr-2">
+                <button mat-mini-fab color="primary" class="mr-2"
+                (click)="onTodoEdit(todo)">
                     <mat-icon>edit</mat-icon>
                 </button>
                 <button mat-mini-fab color="warn">

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Itodo } from '../models/todo';
-import { Observable, of } from 'rxjs';
+import { Itodo, ITodoRes } from '../models/todo';
+import { Observable, of, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +22,23 @@ export class TodoService {
     },
 
   ]
+
+  editTodoSub$ : Subject<Itodo> = new Subject<Itodo>()
   constructor() { }
 
 
   fetchTodo():Observable<Itodo[]>{
       return of(this.todoArr);
+  }
+  
+
+  updateTodo(updatedTodo : Itodo): Observable<ITodoRes>{
+    let GET_INDEX = this.todoArr.findIndex(t => t.todoid === updatedTodo.todoid)
+    this.todoArr[GET_INDEX] = updatedTodo
+
+    return of({
+      msg : `The todo item with id ${updatedTodo.todoid} is updated successfully !!!`,
+      data : updatedTodo
+    })
   }
 }
