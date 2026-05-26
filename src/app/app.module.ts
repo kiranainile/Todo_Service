@@ -11,14 +11,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
+import {HttpClientModule} from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
+import { GetConfirmComponent } from './shared/components/get-confirm/get-confirm.component';
 @NgModule({
   declarations: [
     AppComponent,
     TodoDashboardComponent,
     TodoListComponent,
-    TodoFormComponent
+    TodoFormComponent,
+    GetConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     MatSnackBarModule,
     MatDialogModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

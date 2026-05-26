@@ -1,0 +1,13 @@
+<p> Are You Sure?
+    {{msg}}
+</p>
+<div class="d-flex justify-content-between">
+    <button
+    (click)="onClose(true)"
+    mat-raised-button color="primary" class="mr-2">Yes</button>
+    <button
+    (click)="onClose(false)"
+    mat-raised-button color="warn" class="mr-2">No</button>
+</div>
+
+
