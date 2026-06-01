@@ -13,12 +13,18 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 
 import { FormsModule } from '@angular/forms';
+import { GetconfirmComponent } from './shared/components/getconfirm/getconfirm.component';
+import { StudentFormComponent } from './shared/components/student-form/student-form.component';
+import { StudentTableComponent } from './shared/components/student-table/student-table.component';
 @NgModule({
   declarations: [
     AppComponent,
     TodoDashboardComponent,
     TodoListComponent,
-    TodoFormComponent
+    TodoFormComponent,
+    GetconfirmComponent,
+    StudentFormComponent,
+    StudentTableComponent
   ],
   imports: [
     BrowserModule,

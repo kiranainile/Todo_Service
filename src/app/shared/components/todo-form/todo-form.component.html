@@ -8,9 +8,19 @@
             #todoItem="ngModel"
             name="todoItem"
             type="text" class="form-control"  placeholder="title">
+
+            <strong *ngIf="todoItem.touched && todoItem.hasError('required')">
+                <p class="text-danger">This fiels is Required</p>
+            </strong>
         </div>
         <button 
+        *ngIf="!isIneditMode"
         [disabled]="todo.invalid"
         mat-raised-button color="primary" type="submit">Add button</button>
+
+        <button 
+       *ngIf="isIneditMode"
+       (click)="onUpdate()"
+        mat-raised-button color="primary" type="button">Update button</button>
     </form>
 </mat-card>
